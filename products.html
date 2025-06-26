@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Manage Products - Admin</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+    h2 {
+      text-align: center;
+    }
+    .product-list {
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    .add-form input, .add-form button {
+      margin: 5px;
+      padding: 8px;
+    }
+    .delete-btn {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h2>📦 Product Management</h2>
+
+<!-- Add Product Form -->
+<div class="add-form">
+  <input type="text" id="name" placeholder="Product Name">
+  <input type="number" id="price" placeholder="Price">
+  <button onclick="addProduct()">Add Product</button>
+</div>
+
+<!-- Product Table -->
+<div class="product-list">
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Product</th>
+        <th>Price (Rs.)</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="productTable">
+      <!-- Products will appear here -->
+    </tbody>
+  </table>
+</div>
+
+<script>
+  const products = [];
+
+  function addProduct() {
+    const name = document.getElementById('name').value;
+    const price = document.getElementById('price').value;
+
+    if (name && price) {
+      products.push({ name, price });
+      displayProducts();
+      document.getElementById('name').value = '';
+      document.getElementById('price').value = '';
+    } else {
+      alert("Please enter both name and price.");
+    }
+  }
+
+  function displayProducts() {
+    const table = document.getElementById('productTable');
+    table.innerHTML = "";
+    products.forEach((prod, index) => {
+      table.innerHTML += `
+        <tr>
+          <td>${index + 1}</td>
+          <td>${prod.name}</td>
+          <td>${prod.price}</td>
+          <td><button class="delete-btn" onclick="deleteProduct(${index})">Delete</button></td>
+        </tr>
+      `;
+    });
+  }
+
+  function deleteProduct(index) {
+    products.splice(index, 1);
+    displayProducts();
+  }
+</script>
+<table border="1" style="width: 100%; text-align: left;">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Product</th>
+      <th>Price (Rs.)</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody id="product-list">
+    <!-- JavaScript سے Products یہاں آ جائیں گے -->
+  </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Detail</title>
+  <link rel="stylesheet" href="style.css"> <!-- اگر آپ کا CSS الگ فائل میں ہے -->
+  <style>
+    .product-detail {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+    .product-detail img {
+      max-width: 300px;
+      height: auto;
+    }
+    .product-detail h2 {
+      font-size: 28px;
+      margin: 20px 0 10px;
+    }
+    .product-detail p {
+      font-size: 18px;
+    }
+    .product-detail button {
+      padding: 10px 20px;
+      background-color: darkblue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="product-detail">
+    <img src="bag1.jpg" alt="Ladies Bag">
+    <h2>Ladies Bag</h2>
+    <p>Price: Rs. 3000</p>
+    <p>This elegant ladies bag is made with premium quality material. Perfect for daily use and stylish looks.</p>
+    <button onclick="addToCart('Ladies Bag', 3000)">Add to Cart</button>
+  </div>
+
+</body>
+</html>

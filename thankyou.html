@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You - Azbah Collections</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      text-align: center;
+      padding-top: 100px;
+    }
+    .thankyou-message {
+      background-color: #d4edda;
+      color: #155724;
+      display: inline-block;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    a {
+      display: block;
+      margin-top: 20px;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="thankyou-message">
+    <h1>✅ Thank You!</h1>
+    <p>Your payment has been received successfully.</p>
+    <p>We will deliver your product soon, In sha Allah.</p>
+    <a href="index.html">🔙 Back to Home</a>
+  </div>
+</body>
+</html>
+<script>
+  document.querySelector("form").addEventListener("submit", function(event) {
+    event.preventDefault(); // اصل ادائیگی روک دیں
+    // تھوڑی تاخیر کے بعد شکریہ صفحہ پر جائیں
+    setTimeout(() => {
+      window.location.href = "thankyou.html";
+    }, 1000);
+  });
+</script>
