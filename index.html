@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Azbah Collections</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav class="navbar">
+  <div class="logo">
+    <img src="logo.png" alt="Azbah Logo" width="60">
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Products</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Cart 🛒</a></li>
+  </ul>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+</nav>
+
+
+  <div id="search-container">
+    <input type="text" id="searchInput" placeholder="Search products...">
+  </div>
+
+  <h1>Welcome to AZBAH Collections!</h1>
+  <p>We sell perfumes, cosmetics, clothes, watches, and everything you need for your beauty.</p>
+  <hr/>
+
+  <div id="filter-buttons" style="text-align: center; margin-bottom: 20px;">
+    <button onclick="filterProducts('all')">All</button>
+    <button onclick="filterProducts('bags')">Bags</button>
+    <button onclick="filterProducts('perfume')">Perfumes</button>
+    <button onclick="filterProducts('watch')">Watches</button>
+    <button onclick="filterProducts('Clothes')">Stylish Clothes</button>
+  </div>
+</div>
+
+  <div class="product-grid">
+  <div class="product-card perfume">
+  <img src="Azbah1.jpg" alt="Arabic Perfume" width="100">
+  <h3>Arabic Perfume</h3>
+  <p>Price: Rs. 1200</p>
+  <button class="buy-btn" onclick="location.href='payment.html'">Buy Now</button>
+  <button onclick="addToCart('Arabic Perfume', 1200)">Add to Cart</button>
+  <div class="user-rating">
+    <span class="star" data-value="1">☆</span>
+    <span class="star" data-value="2">☆</span>
+    <span class="star" data-value="3">☆</span>
+    <span class="star" data-value="4">☆</span>
+    <span class="star" data-value="5">☆</span>
+  </div>
+ </div>
+
+ <div class="product-grid">
+  <div class="product-card Ladies watch">
+  <img src="watch1.jpg" alt="Ladies watch" width="100">
+  <h3>Ladies watch</h3>
+  <p>Price: Rs. 1800</p>
+  <button class="buy-btn" onclick="location.href='payment.html'">Buy Now</button>
+  <button onclick="addToCart('Ladies watch', 1800)">Add to Cart</button>
+  <div class="user-rating">
+    <span class="star" data-value="1">☆</span>
+    <span class="star" data-value="2">☆</span>
+    <span class="star" data-value="3">☆</span>
+    <span class="star" data-value="4">☆</span>
+    <span class="star" data-value="5">☆</span>
+  </div>
+</div>
+
+<div class="product-card Ladies bags">
+  <img src="bag1.jpg" alt="Ladies bag" width="100">
+  <h3>Ladies bag</h3>
+  <p>Price: Rs. 2500</p>
+  <button class="buy-btn" onclick="location.href='payment.html'">Buy Now</button>
+  <button onclick="addToCart('Ladies bags', 2500)">Add to Cart</button>
+  <div class="user-rating">
+    <span class="star" data-value="1">☆</span>
+    <span class="star" data-value="2">☆</span>
+    <span class="star" data-value="3">☆</span>
+    <span class="star" data-value="4">☆</span>
+    <span class="star" data-value="5">☆</span>
+  </div>
+</div>
+
+<div class="product-card stylish Clothes">
+  <img src="suit 1.jpg" alt="stylish clothes" width="100">
+  <h3>stylish suits</h3>
+  <p>Price: Rs. 4000</p>
+  <button class="buy-btn" onclick="location.href='payment.html'">Buy Now</button>
+  <button onclick="addToCart('stylish clothes', 4000)">Add to Cart</button>
+  <div class="user-rating">
+    <span class="star" data-value="1">☆</span>
+    <span class="star" data-value="2">☆</span>
+    <span class="star" data-value="3">☆</span>
+    <span class="star" data-value="4">☆</span>
+    <span class="star" data-value="5">☆</span>
+  </div>
+</div>
+
+  <div class="product-card Ladies bags">
+  <img src="b2.jpg" alt="Ladies bag" width="100">
+  <h3>Ladies bag</h3>
+  <p>Price: Rs. 2500</p>
+  <button class="buy-btn" onclick="location.href='payment.html'">Buy Now</button>
+  <button onclick="addToCart('Ladies bags', 3500)">Add to Cart</button>
+  <div class="user-rating">
+    <span class="star" data-value="1">☆</span>
+    <span class="star" data-value="2">☆</span>
+    <span class="star" data-value="3">☆</span>
+    <span class="star" data-value="4">☆</span>
+    <span class="star" data-value="5">☆</span>
+  </div>
+</div>
+
+<section id="contact" style="padding: 30px;">
+    <h2>📩 Contact Us</h2>
+    <form id="contact-form">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <div class="cart">
+    <h3>🛒 Your Cart</h3>
+    <ul id="cart-items"></ul>
+    <div class="cart-total">
+      <strong>Total: Rs. <span id="cart-total">0</span></strong><br><br>
+      <a href="payment.html" class="buy-cart-btn">Proceed to Payment</a>
+    </div>
+  </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
